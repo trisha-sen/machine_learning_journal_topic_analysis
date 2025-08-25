@@ -1,0 +1,1 @@
+Link to documentation: [Identifying journal topic analysis.pdf](https://github.com/trisha-sen/machine_learning_journal_topic_analysis/blob/main/Identifying%20Trending%20Topics%20in%20Machine%20Learning%20with%20NMF.pdf)
