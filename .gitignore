@@ -3,7 +3,7 @@ __pycache__/
 *.py[cod]
 
 # Notebookcheckpoints
-.ipynb_checkpoiints/
+.ipynb_checkpoints/
 
 # csv and excel files
 *.csv
@@ -11,3 +11,8 @@ __pycache__/
 
 # specific files
 *scraping*
+elsevier.txt
+ieee.txt
+read_csv_files.ipynb
+Untitled*
+
