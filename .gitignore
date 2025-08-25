@@ -8,6 +8,8 @@ __pycache__/
 # csv and excel files
 *.csv
 *.xlsx
+*.docx
+*.pptx
 
 # specific files
 *scraping*

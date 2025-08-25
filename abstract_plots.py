@@ -62,7 +62,7 @@ def TopicWordClout(dSup):
     dictionary = dict(zip(text, freq))
     
     # Create the wordcloud object
-    wordcloud = WordCloud(width=480*3, height=480*2, margin=0, colormap='autumn',max_font_size=150, min_font_size=30,
+    wordcloud = WordCloud(width=480*3, height=480*2, margin=0, colormap='cool',max_font_size=150, min_font_size=30,
                           background_color='black').fit_words(dictionary)
     
     # Display the generated image:
