@@ -1,0 +1,13 @@
+# Byte-compiles/ optimized/DLL files
+__pycache__/
+*.py[cod]
+
+# Notebookcheckpoints
+.ipynb_checkpoiints/
+
+# csv and excel files
+.csv
+.xlsx
+
+# specific files
+*scraping*
