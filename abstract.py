@@ -123,8 +123,8 @@ class NMFoperation:
         dfFinal = pd.DataFrame(columns = df.columns)
         for i in range(MIN_YEAR,MAX_YEAR+1):
             df0 = df[(df['Year'] == i)]
-            print("year:", i, "num_abstracts:", len(df0))            
-            dfFinal = dfFinal.append(df0, ignore_index = True)
+            print("year:", i, "num_abstracts:", len(df0))
+            dfFinal = pd.concat([dfFinal, df0], ignore_index = True)
         #     # print(i),
             
         # #     df0 = df0[df0['Type']=='Article']
@@ -134,7 +134,8 @@ class NMFoperation:
     
         # Fit the model
         nmf_model = NMF(n_components=n_components, random_state=1,
-                    alpha=.1, l1_ratio=.5)
+                    # init='random', alpha_W=.1, l1_ratio=.5
+                    )
         nmf = nmf_model.fit(tfidf)
     
         W = nmf_model.transform(tfidf)
@@ -143,7 +144,7 @@ class NMFoperation:
         # Popularity Ranking
         P = np.sum(W, axis = 0)/np.sum(W)  
     
-        tfidf_feature_names = tfidf_vectorizer.get_feature_names()
+        tfidf_feature_names = tfidf_vectorizer.get_feature_names_out()
     
         topWords = top_words(nmf, tfidf_feature_names, n_top_words, P, i)
             
@@ -177,7 +178,7 @@ class plotSimilarity:
 #%% Getting top words to describe topic
 class GetTopWords:
     def __init__(self, dfFinal, n_top_words, WAll, nmf, tfidf_vectorizer):        
-        tfidf_feature_names = tfidf_vectorizer.get_feature_names()
+        tfidf_feature_names = tfidf_vectorizer.get_feature_names_out()
         year_ = MAX_YEAR
         min_index, max_index = (
             min(dfFinal[dfFinal["Year"]==MAX_YEAR].index),

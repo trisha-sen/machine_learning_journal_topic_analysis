@@ -113,10 +113,10 @@ def citation_plot(
         ind = []
         for i in range(1):
             topicInds  = (np.argwhere(argsAll[:,i] == topic))
-            if topicInds != []:
+            if topicInds.size > 0:
                 topicInds = np.concatenate(topicInds)
             feasInds = (np.argwhere(valsAll[:,i] >= tol))
-            if feasInds != []:
+            if feasInds.size > 0:
                 feasInds = np.concatenate(feasInds)
             ind.append((np.intersect1d(topicInds, feasInds)))
 
